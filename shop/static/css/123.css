@@ -1,0 +1,17 @@
+.p1{
+    background-color:rgb(255, 214, 126);
+    border-radius: 7px;
+    padding: 8px;
+}
+
+.p{
+    margin: 10px 10px 10px 0px;
+    width: 55%;
+}
+
+img{
+    width: 40%;
+    height: auto;
+    margin: 10px;
+}
+/*  rgb(255, 205, 161) */

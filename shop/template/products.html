@@ -1,0 +1,35 @@
+{% extends 'base_1.html' %}
+{% load static %}
+{% block title %}Список товаров{% endblock %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/links.css' %}" />
+{% endblock %}
+{% block content %}
+<body class="container">
+    <h1>Список чего-то там</h1>
+        <ul style="list-style-type:none">
+         {% for product in data.products %}
+            <li><a href="{% url 'shop:prod_url' product.id %}"> {{ product.title }}</a></li>
+         {% endfor %}
+      </ul>
+
+    <form action="sendText" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input name="text" type="text"><br><br>
+    <input type="submit" value="Submit" >
+
+    </form>
+    </body>
+{% endblock %}
+
+
+<!--<img src="{{product.image.url}}-->
+
+    <!-- <ul style="list-style-type:none "> -->
+<!--    <ul id = "sp_a" class="sp_a">-->
+<!--        <li><a href="prod1.html?i=0">Какая-то штука номер 1</a></li>-->
+<!--        <li style="list-style-type:none "><img src="{% static '/assets/first.jpg' %}" alt="1" /></li>-->
+<!--        <li><a href="prod1.html?i=1">Какая-то штука номер 2</a></li>-->
+<!--        <li style="list-style-type:none "><img src="{% static '/assets/second.jpg' %}" alt="2" /></li>-->
+<!--        <li><a href="prod1.html?i=2">Какая-то штука номер 3</a></li>-->
+<!--        <li style="list-style-type:none "><img src="{% static '/assets/third.jpg' %}" alt="3" /></li>-->
