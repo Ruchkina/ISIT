@@ -3,6 +3,7 @@
 {% block title %}Список товаров{% endblock %}
 {% block links %}
     <link rel="stylesheet" type="text/css" href="{% static '/css/links.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/for_search.css' %}" />
 {% endblock %}
 {% block content %}
 <body class="container">
@@ -13,10 +14,10 @@
          {% endfor %}
       </ul>
 
-    <form action="sendText" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <input name="text" type="text"><br><br>
-    <input type="submit" value="Submit" >
+    <form class="form" action="sendText" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input class="input" name="text" type="text"><br><br>
+        <input class="submit" type="submit" value="Submit" >
 
     </form>
     </body>

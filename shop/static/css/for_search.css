@@ -1,0 +1,17 @@
+.form{
+}
+
+.input{
+    border:2px solid rgb(250, 214, 126);
+    border-radius: 6px;
+    width: 32%;
+}
+
+.submit{
+    width:10%;
+    hight:20px;
+    background-color:rgb(250, 214, 126);
+    border:4px solid rgb(255, 214, 126);
+    border-radius: 6px;
+
+}
