@@ -12,10 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="{% static '/css/links.css' %}" />
-<!--    <link rel="stylesheet" type="text/css" href="{% static 'css/123.css' %}" />-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
-<!--    <script src="{% static 'js/index.js' %}" defer></script>-->
-<!--    <script src="{% static 'js/1.js' %}" defer></script>-->
 
 {% endblock %}
 
@@ -41,14 +38,8 @@
           <div class="col p"><p class="p1"> Классный, <br />прекрасный, <br />чудесный продукт 3!
           </p></div>
           <div class="col"><img src="{% static '/assets/third.jpg' %}" alt="My image"/></div>
-      </div>
-
-    {% else %}
-       <h1>Не найдено</h1>
 
     {% endif %}
 
-    <button onclick="location.href = '/shop/'">Назад</button>
-
-    </body>
 {% endblock %}
+

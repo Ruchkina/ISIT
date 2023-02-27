@@ -1,0 +1,24 @@
+{% extends 'base_1.html' %}
+{% load static %}
+
+{% block title %}Список спектаклей{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/links.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/for_search.css' %}" />
+{% endblock %}
+
+{% block content %}
+<ul>
+    {% for performance in data.performances %}
+       {% include 'performance_element.html' with elem=performance %}
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+ <form class="form" action="sendText" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input class="input" name="text" type="text"><br><br>
+        <input class="submit" type="submit" value="Поиск" >
+    </form>
+{% endblock %}
