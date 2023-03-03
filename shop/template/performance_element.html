@@ -1,2 +1,9 @@
+{% load static %}
 
 <li><a href="{% url 'shop:performance_url' elem.id %}">{{ elem.name }}</a> </li>
+<img src="{{ elem.image }}" alt="My image">
+<!--<img src="{% static '{{elem.image.url}}' %}" style="width:50%" alt="My image">-->
+<!--<img src="{% url 'shop:performance_url' elem.id %}">{{ elem.image }}-->
+
+<!--<div class="col"><img src="{% static '/assets/first.jpg' %}" alt="My image"/></div>-->
+
