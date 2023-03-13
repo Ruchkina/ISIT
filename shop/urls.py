@@ -1,14 +1,4 @@
-"""
-from django.urls import path
 
-from . import views
-
-urlpatterns = [
-    path('hello/', views.hello, name='hello'),
-    path('helloBmstu/', views.index, name='index'),
-    path('', views.hello, name='hello'),
-]
-"""
 from django.urls import path
 from django.contrib import admin
 
