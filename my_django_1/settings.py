@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'shop',
 ]
 
@@ -85,7 +86,7 @@ WSGI_APPLICATION = 'my_django_1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tese',
+        'NAME': 'lab5',
         'USER': 'teseuser',
         'PASSWORD': '123',
         'HOST': '127.0.0.1',

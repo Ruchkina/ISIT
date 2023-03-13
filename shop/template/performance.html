@@ -18,8 +18,12 @@
 <body class="container">
     <div class="row">
         <h1>Название: {{ data.performance.name }}</h1>
-        <div class="col p"><p class="p1">Режисер: {{ data.performance.director }}</p></div>
+        <div class="col p"><p class="p1">Режисер: {{ data.performance.theatre.director }}</p></div>
         <div class="col p"><p class="p1">Описание: {{ data.performance.description }}</p></div>
+    </div>
+    <div class="row">
+        <div class="col p"><p class="p1">Дата: {{ data.performance.theatre.data_perform }}</p></div>
+        <div class="col p"><p class="p1">Цена: {{ data.performance.price }}</p></div>
     </div>
     <img src="{{ data.performance.image.url }}" style="width:30%" alt="My image">
 {% endblock %}

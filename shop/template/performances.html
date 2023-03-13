@@ -16,9 +16,17 @@
         <li>Список пуст</li>
     {% endfor %}
 </ul>
- <form class="form" action="sendText" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input class="input" name="text" type="text"><br><br>
-        <input class="submit" type="submit" value="Поиск" >
-    </form>
+<form class="form" action="sendText" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input class="input" name="text" type="text"><br><br>
+    <input class="submit" type="submit" value="Поиск">
+</form>
+
+<form class="form" action="deletePerform" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input class="input" name="text" type="text"><br><br>
+    <input class="submit" type="submit" value="Удалить">
+</form>
+
+
 {% endblock %}
