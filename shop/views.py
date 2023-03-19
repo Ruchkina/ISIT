@@ -24,4 +24,11 @@ def GetPerformanceList(request):
         'performances': Performance.objects.all()
     }})
 
+def DeletePerform(request):
+    input_text = request.POST['text']
+    # num = int(input_text)
+    record = Performance.objects.get(name=input_text)
+    record.delete()
+    return GetPerformanceList(request)
+
 
