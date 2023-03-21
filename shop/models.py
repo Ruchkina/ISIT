@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Count
 
 class Theatre(models.Model):
     director = models.CharField(max_length=30)
@@ -28,6 +29,12 @@ class Order (models.Model):
         Customer,
         on_delete=models.CASCADE
     )
+    #
+    # def func(self):
+    #     (Order.objects
+    #      .values('data')
+    #      .annotate(total=Count('pk'))
+    #      .filter('data'=='2023-04-20'))
 class OrderTheatre(models.Model):
     order_rk = models.ForeignKey(
         Order,

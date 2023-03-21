@@ -1,10 +1,13 @@
 
 # from django.shortcuts import render
-# from shop.models import Performance
+from shop.models import Order
 from . import models
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.db.models import Count
 
 from rest_framework import viewsets
-from shop.serializers import PerformanceSerializer, CustomerSerializer, TheatreSerializer, OrderSerializer, OrderTheatreSerializer
+from shop.serializers import qweSerializer, PerformanceSerializer, CustomerSerializer, TheatreSerializer, OrderSerializer, OrderTheatreSerializer
 #
 # def sendText(request):
 #     input_text = request.POST['text']
@@ -53,3 +56,20 @@ class OrderViewSet(viewsets.ModelViewSet):
 class OrderTheatreViewSet(viewsets.ModelViewSet):
     queryset = models.OrderTheatre.objects.all()
     serializer_class = OrderTheatreSerializer
+
+def GetPerformanceList(request):
+    d = '2023-03-06'
+    return render(request, 'qwe.html', {
+            'data1': Order.objects.filter(data = d).count()
+         # .values('data')
+         # .annotate(total=Count('pk'))
+    })
+
+         # .values('data')
+         # .annotate(total=Count('pk'))
+         # .filter('data' == '2023-04-20'))
+# class qweViewSet(viewsets.ModelViewSet):
+#     queryset = models.Order.func()
+    # queryset = models.OrderTheatre.objects.all()
+    # queryset = orders.filter(pk=1)
+    # serializer_class = qweSerializer

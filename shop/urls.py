@@ -34,9 +34,11 @@ router.register(r'performance', views.PerformanceViewSet)
 router.register(r'theatre', views.TheatreViewSet)
 router.register(r'order', views.OrderViewSet)
 router.register(r'customer', views.CustomerViewSet)
+# router.register(r'qwe', views.qweViewSet, basename='qwe')
 
 urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
+    path("GetPerformanceList", view=views.GetPerformanceList, name="GetPerformanceList"),
 ]

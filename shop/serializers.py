@@ -1,5 +1,6 @@
 from shop.models import Performance, Customer, Theatre, Order, OrderTheatre
 from rest_framework import serializers
+from django.db.models import Count
 
 class PerformanceSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,3 +27,13 @@ class OrderTheatreSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderTheatre
         fields = ["pk", "order_rk", "performance_rk"]
+
+class qweSerializer(serializers.ModelSerializer):
+    class Meta:
+        s = (Order.objects
+             .get(pk=1))
+         # .values('data')
+         # .annotate(total=Count('pk'))
+         # .filter('data' == '2023-04-20'))
+        model = Order
+        fields = [s]
